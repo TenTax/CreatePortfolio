@@ -7,6 +7,10 @@
     text-decoration: none;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-size  : 16px;
     line-height: 1;
@@ -80,6 +84,35 @@ section .title::after {
     white-space     : nowrap;
 }
 
+.scroll-up-btn {
+    position: fixed;
+    width: 45px;
+    height: 45px;
+    background-color: crimson;
+    border-radius: 6px;
+    right: 30px;
+    bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 998;
+    opacity: 0;
+    pointer-events: none;
+    transition-property: opacity, transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transform: translateY(20px);
+}
+
+.scroll-up-btn.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
 /* navbar styling */
 
 .navbar {
@@ -126,6 +159,7 @@ section .title::after {
 }
 
 .navbar .menu li a {
+    display: block;
     color      : #fff;
     font-size  : 18px;
     font-weight: 500;
