@@ -1,12 +1,12 @@
-$(document).ready(function() {
-    $(window).scroll(function() {
-        if(this.scrollY > 20) {
+$(document).ready(function () {
+    $(window).scroll(function () {
+        if (this.scrollY > 20) {
             $('.navbar').addClass('sticky');
         } else {
             $('.navbar').removeClass('sticky');
         }
 
-        if(this.scrollY > 100) {
+        if (this.scrollY > 100) {
             $('.scroll-up-btn').addClass('show');
         } else {
             $('.scroll-up-btn').removeClass('show');
@@ -15,12 +15,12 @@ $(document).ready(function() {
 
     // scroll up btn script
 
-    $('.scroll-up-btn').click(function() {
-        $('html').animate({scrollTop: 0});
+    $('.scroll-up-btn').click(function () {
+        $('html').animate({ scrollTop: 0 });
     });
 
     // typing animation script
-    
+
     var typed = new Typed('.typing', {
         strings: ['Ютубер', 'Разработчик', 'Блогер', 'Дизайнер', 'Фрилансер'],
         typeSpeed: 100,
@@ -37,13 +37,13 @@ $(document).ready(function() {
 
     // toogle menu/navbar script
 
-    $('.menu-btn').click(function() {
+    $('.menu-btn').click(function () {
         $('.navbar .menu').toggleClass('active');
         $('.menu-btn i').toggleClass('active');
         $('body').toggleClass('modal');
     });
 
-    $('.menu-link').click(function() {
+    $('.menu-link').click(function () {
         $('.navbar .menu').removeClass('active');
         $('.menu-btn i').removeClass('active');
         $('body').removeClass('modal');
