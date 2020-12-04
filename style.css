@@ -29,7 +29,8 @@ body.modal {
 .services,
 .skills,
 .teams,
-.contact {
+.contact,
+footer {
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -609,6 +610,23 @@ section .title::after {
 .contact .right form .button button:hover {
     background-color: transparent;
     color           : crimson;
+}
+
+/* footer section styling  */
+footer {
+    background-color: #111;
+    padding: 25px;
+    text-align: center;
+    color: #fff;
+}
+
+footer span a {
+    color: crimson;
+    font-weight: 600;
+}
+
+footer span a:hover {
+    text-decoration: underline;
 }
 
 /* responsive media query start */
