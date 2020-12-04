@@ -25,6 +25,11 @@ body.modal {
     margin   : auto;
 }
 
+/* all similar styling */
+section {
+    padding: 100px 0;
+}
+
 /* navbar styling */
 
 .navbar {
@@ -39,7 +44,7 @@ body.modal {
 }
 
 .navbar.sticky {
-    background-color: teal;
+    background-color: crimson;
     padding         : 15px 0;
 }
 
@@ -56,7 +61,7 @@ body.modal {
 }
 
 .navbar .logo a span {
-    color     : teal;
+    color     : crimson;
     transition: color 0.3s ease;
 }
 
@@ -78,7 +83,7 @@ body.modal {
 }
 
 .navbar .menu li a:hover {
-    color: teal;
+    color: crimson;
 }
 
 .navbar.sticky .menu li a:hover {
@@ -117,26 +122,26 @@ body.modal {
 }
 
 .home .home-content .text-3 span {
-    color      : teal;
+    color      : crimson;
     font-weight: 500;
 }
 
 .home .home-content a {
     display                   : inline-block;
-    background-color          : teal;
+    background-color          : crimson;
     color                     : #fff;
     font-size                 : 25px;
     padding                   : 0.6em 1.4em;
     margin-top                : 20px;
     border-radius             : 0.4em;
-    border                    : 2px solid teal;
+    border                    : 2px solid crimson;
     transition-property       : background-color, color;
     transition-duration       : 0.3s;
     transition-timing-function: ease;
 }
 
 .home .home-content a:hover {
-    color           : teal;
+    color           : crimson;
     background-color: transparent;
 }
 
@@ -150,15 +155,12 @@ body.modal {
 }
 
 /* about section styling */
-section {
-    padding: 100px 0;
-}
 
-.about {
+.about, .services {
     font-family: 'Open Sans', sans-serif;
 }
 
-.about .title {
+section .title {
     font-family: 'Ubuntu', sans-serif;
     text-align : center;
     font-size: 40px;
@@ -168,30 +170,37 @@ section {
     position: relative;
 }
 
-.about .title::before {
+section .title::before {
     content: "";
     position: absolute;
     bottom: 0;
     left: 50%;
-    background-color: #111;
     height: 3px;
     width: 180px;
     transform: translateX(-50%);
 }
 
-.about .title::after {
-    content: "Кто я";
+section .title::after {
     position: absolute;
     bottom: -7px;
     left: 50%;
     background-color: #fff;
     font-size: 20px;
-    color: teal;
+    color: crimson;
     transform: translateX(-50%);
     padding: 0 5px;
 }
 
-.about .about-content {
+.about .title::before {
+    background-color: #111;
+}
+
+.about .title::after {
+    content: "Кто я";
+}
+
+.about .about-content,
+.services .services-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -221,7 +230,7 @@ section {
 }
 
 .about .about-content .right .text span {
-    color: teal;
+    color: crimson;
 }
 
 .about .about-content .right p {
@@ -231,21 +240,78 @@ section {
 
 .about .about-content .right a {
     display                   : inline-block;
-    background-color          : teal;
+    background-color          : crimson;
     color                     : #fff;
     font-size                 : 18px;
     padding                   : 0.6em 1.4em;
     margin-top                : 20px;
     border-radius             : 0.4em;
-    border                    : 2px solid teal;
+    border                    : 2px solid crimson;
     transition-property       : background-color, color;
     transition-duration       : 0.3s;
     transition-timing-function: ease;
 }
 
 .about .about-content .right a:hover {
-    color           : teal;
+    color           : crimson;
     background-color: transparent;
+}
+
+/* services section styling */
+.services {
+    background-color: #111;
+    color: #fff;
+}
+
+.services .title::before {
+    background-color: #fff;
+}
+
+.services .title::after {
+    content: "Что я умею";
+    background-color: #111;
+}
+
+.services .services-content .card {
+    width: calc(33% - 30px);
+    background-color: #222;
+    text-align: center;
+    border-radius: 6px;
+    padding: 25px;
+    cursor: pointer;
+}
+
+.services .services-content .card:hover {
+    background-color: crimson;
+}
+
+.services .services-content .card .box{
+    transition: transform 0.3s ease;
+}
+
+.services .services-content .card:hover .box{
+    transform: scale(1.05);
+}
+
+.services .services-content .card i {
+    color: crimson;
+    font-size: 50px;
+    transition: color 0.3s ease;
+}
+
+.services .services-content .card:hover i {
+    color: #fff;
+}
+
+.services .services-content .card .text {
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+.services .services-content .card p {
+    line-height: 1.4;
+    font-weight: 300;
 }
 
 /* responsive media query start */
@@ -257,6 +323,11 @@ section {
     
     .about .about-content .left img {
         height    : 340px;
+    }
+
+    .services .services-content .card {
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
     }
 }
 
@@ -344,6 +415,10 @@ section {
 
     .home .home-content a {
         font-size: 20px;
+    }
+
+    .services .services-content .card {
+        width: 100%;
     }
 }
 
