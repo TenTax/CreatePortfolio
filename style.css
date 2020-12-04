@@ -28,7 +28,8 @@ body.modal {
 /* all similar styling */
 .about,
 .services,
-.skills {
+.skills,
+.teams {
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -260,7 +261,8 @@ section .title::after {
 }
 
 /* services section styling */
-.services {
+.services,
+.teams {
     background-color: #111;
     color           : #fff;
 }
@@ -279,7 +281,7 @@ section .title::after {
     background-color: #222;
     text-align      : center;
     border-radius   : 6px;
-    padding         : 25px;
+    padding         : 25px 35px;
     cursor          : pointer;
 }
 
@@ -317,8 +319,6 @@ section .title::after {
 }
 
 /* skills section styling */
-.skills {}
-
 .skills .title::before {
     background-color: #111;
 }
@@ -332,15 +332,15 @@ section .title::after {
 }
 
 .skills .skills-content .left .text {
-    font-size: 20px;
-    font-weight: 600;
+    font-size    : 20px;
+    font-weight  : 600;
     margin-bottom: 10px;
-    line-height: 1.5;
+    line-height  : 1.5;
 }
 
 .skills .skills-content .left p {
     line-height: 1.4;
-    text-align: justify;
+    text-align : justify;
 }
 
 .skills .skills-content .left a {
@@ -367,10 +367,10 @@ section .title::after {
 }
 
 .skills .skills-content .right .info {
-    display: flex;
+    display        : flex;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 7px;
+    align-items    : center;
+    margin-bottom  : 7px;
 }
 
 .skills .skills-content .right span {
@@ -378,18 +378,18 @@ section .title::after {
 }
 
 .skills .skills-content .right .line {
-    height: 5px;
-    width: 100%;
+    height          : 5px;
+    width           : 100%;
     background-color: lightgrey;
-    position: relative;
+    position        : relative;
 }
 
 .skills .skills-content .right .line::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    content: "";
+    position        : absolute;
+    top             : 0;
+    left            : 0;
+    height          : 100%;
+    content         : "";
     background-color: crimson;
 }
 
@@ -413,6 +413,90 @@ section .title::after {
     width: 10%;
 }
 
+/* teams section styling */
+
+.teams .title::before {
+    background-color: #fff;
+}
+
+.teams .title::after {
+    content         : "Кто со мной";
+    background-color: #111;
+}
+
+.teams .carousel .card {
+    background-color: #222;
+    border-radius   : 6px;
+    padding         : 25px 35px;
+    text-align      : center;
+    transition      : background-color 0.3s ease;
+}
+
+.teams .carousel .card:hover {
+    background-color: crimson;
+}
+
+.teams .carousel .card .box {
+    display        : flex;
+    flex-direction : column;
+    align-items    : center;
+    justify-content: center;
+    transition     : transform 0.3s ease;
+}
+
+.teams .carousel .card:hover .box {
+    transform: scale(1.05);
+}
+
+.teams .carousel .card .text {
+    font-size  : 25px;
+    font-weight: 600;
+    margin     : 10px 0;
+}
+.teams .carousel .card p {
+    font-weight: 300;
+    line-height: 1.3;
+}
+
+
+.teams .carousel .card img {
+    width        : 150px;
+    height       : 150px;
+    object-fit   : cover;
+    border-radius: 50%;
+    border       : 5px solid crimson;
+    transition     : border 0.3s ease;
+}
+
+.teams .carousel .card:hover img {
+    border       : 5px solid #fff;
+}
+
+.owl-dots {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.owl-dot {
+    width: 13px;
+    height: 13px;
+    margin: 0 5px;
+    outline: none!important;
+    border-radius: 50%;
+    border: 2px solid crimson!important;
+    transition: all 0.3s ease;
+}
+
+.owl-dot.active {
+    width: 35px;
+    border-radius: 14px;
+}
+
+.owl-dot.active,
+.owl-dot:hover {
+    background-color: crimson!important;
+}
+
 
 
 /* responsive media query start */
@@ -432,7 +516,7 @@ section .title::after {
     }
 
     .skills .skills-content .column {
-        width        : calc(50% - 20px);
+        width: calc(50% - 20px);
     }
 }
 

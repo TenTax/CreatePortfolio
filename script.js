@@ -14,4 +14,23 @@ $(document).ready(function() {
         $('.menu-btn i').toggleClass('active');
         $('body').toggleClass('modal');
     });
+
+    // owl carousel script
+    $('.carousel').owlCarousel({
+        margin: 20,
+        loop: true,
+        autoplayTimeOut: 2000,
+        autoplayHoverPause: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 2
+            },
+            1000: {
+                items: 3
+            }
+        }
+    });
 });
